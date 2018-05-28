@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MESSAGES</title>
+</head>
+<body>
+	<ul>
+		{%for message in messages%} 
+		<li>{{message.name}}:{{message.body}}</li>
+		{%endfor%}
+	</ul>
+	<form action={{url_for('chatroom',username=name)}} method="POST">
+		<span name="name">{{name}}:</span>
+		<input type="text" name="msg" placeholder="Enter your Message">
+		<button>SEND</button>
+	</form>
+</body>
+</html>
